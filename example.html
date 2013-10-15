@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>LocalStorageNS Example</title>
+</head>
+
+<body>
+
+<h1>LocalStorageNS</h1>
+<h2>Example</h2>
+
+<p>View source of this document</p>
+
+<script src="src/localstoragens.min.js"></script>
+<script>
+
+var p = LocalStorageNS.create( "preferences" );
+
+p.setItem( "ui", { sidebarExpanded: true, largeIcons: false }, true );
+
+var o = LocalStorageNS.create( "project" );
+
+o.setItem( "filepath", "/path/to/project.file" );
+o.setItem( "attributes", { width: 1024, height: 768, effects: { grayscale: .5, blur: "5px" } }, true );
+
+o.getItem( "filepath" );  // returns "/path/to/project.file"
+
+</script>
+</body>
+</html>
