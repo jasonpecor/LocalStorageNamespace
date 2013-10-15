@@ -62,7 +62,7 @@ var LocalStorageNS = ( function ( window ) {
 	};
 	
 	LocalStorageNamespace.prototype.getItem = function (name, json) {
-		return json ? JSON.parse(window.localStorage.getItem(this.ns + sep + name)) : window.localStorage.getItem(this.ne + sep + name);
+		return json ? JSON.parse(window.localStorage.getItem(this.ns + sep + name)) : window.localStorage.getItem(this.ns + sep + name);
 	};
 	
 	LocalStorageNamespace.prototype.removeItem = function (name) {
