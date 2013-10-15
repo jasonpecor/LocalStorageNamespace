@@ -4,18 +4,49 @@
  * v 0.1
  *
  * Created by Jason Pecor
- *
- * Usage
- * - - - - - - - - - -
- * var p = LocalStorageNS.create( "preferences" ); 							// create a namespage
- * p.setItem( "username", "faflintstone" ); 								// set a standard item in the namespace
- * p.setItem( "contact", {email: "ff@bedrock.com", name: "Fred"}, true );	// set an encoded item in the namespace
- * p.getItem( "username" );													// get a standard item in the namespace
- * p.getItem( "contact", true );											// get an encoded item in the namespace
- * p.getItems();															// get all items in the namespace
- * p.getItems( true );														// get all items, decoding encoded items
- * p.clear();																// clear all items in the namespace
  */
+
+/*
+	Usage
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	
+	// create a namespace
+	
+	var preferences = LocalStorageNS.create( "preferences" );
+	
+	// set an item in the namespace
+	
+	preferences.setItem( "username", "faflintstone" );
+	
+	// set an encoded item in the namespace
+	
+	preferences.setItem( "contact", {email: "ff@bedrock.com", name: "Fred"}, true );
+	
+	// get an item from the namespace	
+	
+	preferences.getItem( "username" );													
+	
+	// get an encoded item from the namespace
+	
+	preferences.getItem( "contact", true );	
+	
+	// get all items in the namespace	
+										
+	preferences.getItems();
+	
+	// get all items from the namespace, decoding as necessary
+	
+	preferences.getItems( true );
+	
+	// remove an item from namespace
+	
+	preferences.removeItem( "username" );
+	
+	// clear all items in the namespace
+	
+	p.clear();
+
+*/
  
 var LocalStorageNS = ( function ( window ) {
 	
