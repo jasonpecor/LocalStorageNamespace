@@ -59,8 +59,15 @@ The "interface" namespace is now empty
 ```javascript
 interface.getItems(); // returns {}
 ```
-
-
+Trying to create a namespace that already exists will simply return a reference to the original namespace
+```javascript
+var interface2 = LocalStorageNS.create("interface");
+interface === interface2; // true
+```
+Test to see if an object is a local storage namespace
+```javascript
+LocalStorageNS.isNamespace(interface2); // true
+```
 
 
 
