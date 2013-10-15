@@ -4,6 +4,8 @@
  * v 0.1
  *
  * Created by Jason Pecor
+ *
+ * @preserve LocalStorageNamespace
  */
 
 /*
@@ -131,6 +133,9 @@ var LocalStorageNS = ( function ( window ) {
 				_all[ns] = new LocalStorageNamespace(ns);
 			}
 			return _all[ns];
+		},
+		isNamespace: function (ns) {
+			return ns.constructor === LocalStorageNamespace;
 		}
 	}
 
