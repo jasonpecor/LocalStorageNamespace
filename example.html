@@ -26,6 +26,16 @@ o.setItem( "attributes", { width: 1024, height: 768, effects: { grayscale: .5, b
 
 o.getItem( "filepath" );  // returns "/path/to/project.file"
 
+
+function dump() {
+	var l = localStorage.length; i = 0;
+	for(;i<l;i++) {
+		var key = localStorage.key(i),
+			val = localStorage[key];
+		
+		console.log(key + ' - ' + val + "\n");
+	}	
+}
 </script>
 </body>
 </html>

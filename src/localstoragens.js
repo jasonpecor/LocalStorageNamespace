@@ -50,7 +50,9 @@
 
 */
  
-var LocalStorageNS = ( function ( window ) {
+var LocalStorageNS = ( function ( window, undefined ) {
+	
+	"use strict";
 	
 	var _index = [], _all = {}, sep = '::';
 	
@@ -133,6 +135,14 @@ var LocalStorageNS = ( function ( window ) {
 				_all[ns] = new LocalStorageNamespace(ns);
 			}
 			return _all[ns];
+		},
+		destroy: function (ns) {
+			if (ns.constructor === LocalStorageNamespace) {
+				ns.clear();
+				_index.splice(_index.indexOf(ns.ns), 1);
+				delete _all[ns.ns];
+				ns = undefined;
+			}
 		},
 		isNamespace: function (ns) {
 			return ns.constructor === LocalStorageNamespace;
